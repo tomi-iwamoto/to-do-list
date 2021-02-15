@@ -23,12 +23,17 @@ addButton.addEventListener('click', function() {
     //Adding width to container
     container.style.width = "70%";
 
-    //Adding padding to this div
+    //Adding styles to this div
     div.style.padding = "10px";
     div.style.display = "flex";
-    div.style.justifyContent = "center";
+    div.style.justifyContent = "space-between";
     div.style.alignItems = "center";
 
+
+
+    //Creating a second div to place inside of the original div
+    let innerDiv = document.createElement('div');
+    div.appendChild(innerDiv);
 
     //Creating icon to clear individual item
     //To do this, create an image element and then set the attributes of the image using setAttribute
@@ -36,15 +41,14 @@ addButton.addEventListener('click', function() {
     check.setAttribute('src', 'check-mark.png')
     check.setAttribute('width', '25');
     check.setAttribute('height', '25');
-    check.style.marginLeft = "80px";
     
-    //Adding the icon to the new div
-    div.appendChild(check);
+    //Adding the icon to the inner div
+    innerDiv.appendChild(check);
     
     //When the image element (icon) has been clicked, it will put a line through the the div
     check.addEventListener('click', function() {
 
-        div.style.textDecoration = "line-through";
+        innerDiv.style.textDecoration = "line-through";
 
     })
 
@@ -56,7 +60,7 @@ addButton.addEventListener('click', function() {
     close.setAttribute('height', '25');
 
     //Adding the icon to the added div
-    div.appendChild(close);
+    innerDiv.appendChild(close);
 
     //When the close button is clicked, it will remove the added div
     close.addEventListener('click', function() {
