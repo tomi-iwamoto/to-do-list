@@ -28,3 +28,7 @@ button {
 #clear {
     margin:70px 0 40px 0;
 }
+
+.add {
+    display:flex;
+}

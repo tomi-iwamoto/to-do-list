@@ -2,7 +2,7 @@
 
 let addButton = document.getElementById('add');
 let clearButton = document.getElementById('clear');
-let check = 
+ 
 
 addButton.addEventListener('click', function() {
 
@@ -28,7 +28,8 @@ addButton.addEventListener('click', function() {
     div.style.display = "flex";
     div.style.justifyContent = "space-between";
     div.style.alignItems = "center";
-
+    //Adding a class of add to this -- in order to access this later in the clear button event listener
+    div.classList.add('add');
 
 
     //Creating a second div to place inside of the original div
@@ -39,8 +40,9 @@ addButton.addEventListener('click', function() {
     //To do this, create an image element and then set the attributes of the image using setAttribute
     let check = document.createElement('IMG');
     check.setAttribute('src', 'check-mark.png')
-    check.setAttribute('width', '25');
-    check.setAttribute('height', '25');
+    check.setAttribute('width', '20');
+    check.setAttribute('height', '20');
+    check.style.margin = "10px";
     
     //Adding the icon to the inner div
     innerDiv.appendChild(check);
@@ -56,8 +58,10 @@ addButton.addEventListener('click', function() {
     //Adding a close icon
     let close = document.createElement('IMG');
     close.setAttribute('src', 'close.png');
-    close.setAttribute('width', '25');
-    close.setAttribute('height', '25');
+    close.setAttribute('width', '20');
+    close.setAttribute('height', '20');
+    close.style.margin = "10px";
+
 
     //Adding the icon to the added div
     innerDiv.appendChild(close);
@@ -72,3 +76,22 @@ addButton.addEventListener('click', function() {
 
 })
 
+
+
+//This clear button will erase all entries
+clearButton.addEventListener('click', function() {
+
+    //Getting at the div elements with the class of "add"
+    let addedItems = document.querySelectorAll('.add');
+    //Creating array from this nodelist
+    let addedItemsArray = Array.from(addedItems);
+
+    //For each of the added divs with the class of "add",run this function- This will remove the item from the screen
+    addedItems.forEach(function(target) {
+
+        target.style.display = 'none';
+
+    })
+
+
+})
