@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,27 +8,33 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="main.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<h1>To Do</h1>
+    <h1>To Do List</h1>
 
-<input id="activity" type="text" name="activity">
+    <div class="input-wrap">
+        <input id="activity" type="text" name="activity">
+        <button id="add" type="submit">Add</button>
+    </div>
 
-<button id="add" type="submit">Add Item</button>
+    <div id="list-container">
 
-<div id="list-container">
+        <!--this is where the new divs and list will appear-->
 
-<!--this is where the new divs and list will appear-->
-    
-</div>
+    </div>
 
-<button id="clear" type="submit">Clear All</button>
-
-
-
+    <button id="clear" type="submit">Clear All</button>
 
 
-<script src="script.js"></script>
+
+
+
+    <script src="script.js"></script>
 </body>
+
 </html>
