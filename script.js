@@ -22,5 +22,24 @@ addButton.addEventListener('click', function() {
     input.value = ' ';
 
 
+
+    //Creating icon to clear individual item
+    //To do this, create an image element and then set the attributes of the image using setAttribute
+    let icon = document.createElement('IMG');
+    icon.setAttribute('src', 'check-mark.png')
+    icon.setAttribute('width', '30');
+    icon.setAttribute('height', '30');
+    
+    //Adding the icon to the new div
+    div.appendChild(icon);
+    
+    //When the image element (icon) has been clicked, it will put a line through the the div
+    icon.addEventListener('click', function() {
+
+        div.style.textDecoration = "line-through";
+
+    })
+
+
 })
 
