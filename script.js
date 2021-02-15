@@ -48,7 +48,7 @@ addButton.addEventListener('click', function() {
     //When the image element (icon) has been clicked, it will put a line through the the div
     check.addEventListener('click', function() {
 
-        innerDiv.style.textDecoration = "line-through";
+        div.style.textDecoration = "line-through";
 
     })
 
