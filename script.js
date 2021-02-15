@@ -4,6 +4,7 @@ let addButton = document.getElementById('add');
 let clearButton = document.getElementById('clear');
  
 
+
 addButton.addEventListener('click', function() {
 
     //Getting the input field
@@ -20,8 +21,7 @@ addButton.addEventListener('click', function() {
     div.innerText = activityName;
     //Once the input field has been submitted by this button, the input value is going to be clear
     input.value = ' ';
-    //Adding width to container
-    container.style.width = "70%";
+
 
     //Adding styles to this div
     div.style.padding = "10px";
@@ -32,7 +32,8 @@ addButton.addEventListener('click', function() {
     div.classList.add('add');
 
 
-    //Creating a second div to place inside of the original div
+
+    //Creating a second div to place inside of the original div to use as a wrapper for the icons
     let innerDiv = document.createElement('div');
     div.appendChild(innerDiv);
 
@@ -73,6 +74,9 @@ addButton.addEventListener('click', function() {
 
     })
 
+
+
+  
 
 })
 

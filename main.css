@@ -5,6 +5,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 100px;
 }
 
 h1 {
@@ -16,6 +17,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
 }
 
 input {
@@ -39,6 +41,7 @@ button {
     font-family: 'Roboto', sans-serif;
     color:rgb(109, 187, 201);
     font-size: 18px;
+    width: 80%;
 }
 
 #add {
@@ -57,4 +60,21 @@ button {
 
 .add {
     display:flex;
+}
+
+.remove {
+    display:none;
+}
+
+
+@media only screen and (min-width: 1200px){
+
+
+#list-container {
+    width:30%;
+}
+
+
+
+
 }
