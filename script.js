@@ -20,25 +20,50 @@ addButton.addEventListener('click', function() {
     div.innerText = activityName;
     //Once the input field has been submitted by this button, the input value is going to be clear
     input.value = ' ';
+    //Adding width to container
+    container.style.width = "70%";
 
+    //Adding padding to this div
+    div.style.padding = "10px";
+    div.style.display = "flex";
+    div.style.justifyContent = "center";
+    div.style.alignItems = "center";
 
 
     //Creating icon to clear individual item
     //To do this, create an image element and then set the attributes of the image using setAttribute
-    let icon = document.createElement('IMG');
-    icon.setAttribute('src', 'check-mark.png')
-    icon.setAttribute('width', '30');
-    icon.setAttribute('height', '30');
+    let check = document.createElement('IMG');
+    check.setAttribute('src', 'check-mark.png')
+    check.setAttribute('width', '25');
+    check.setAttribute('height', '25');
+    check.style.marginLeft = "80px";
     
     //Adding the icon to the new div
-    div.appendChild(icon);
+    div.appendChild(check);
     
     //When the image element (icon) has been clicked, it will put a line through the the div
-    icon.addEventListener('click', function() {
+    check.addEventListener('click', function() {
 
         div.style.textDecoration = "line-through";
 
     })
+
+
+    //Adding a close icon
+    let close = document.createElement('IMG');
+    close.setAttribute('src', 'close.png');
+    close.setAttribute('width', '25');
+    close.setAttribute('height', '25');
+
+    //Adding the icon to the added div
+    div.appendChild(close);
+
+    //When the close button is clicked, it will remove the added div
+    close.addEventListener('click', function() {
+
+        div.style.display = 'none';
+
+    })
 
 
 })
