@@ -11,6 +11,7 @@ body {
 h1 {
     font-family: 'Roboto', sans-serif;
     color:rgb(55, 121, 133);
+    font-size: 27px;
 }
 
 .input-wrap {
@@ -32,7 +33,7 @@ input {
 button {
     border:none;
     padding:10px 20px;
-    background-color: rgb(192, 234, 245);
+    background-color: transparent;
     color:rgb(102, 188, 223);
 }
 
@@ -45,10 +46,12 @@ button {
 }
 
 #add {
-    padding:22px;
+    padding:20px;
     border-top-right-radius: 7px;
     border-bottom-right-radius: 7px;
-    color:green;
+    color:rgb(76, 134, 153);
+    border:lightblue solid 2px;
+    border-left: transparent;
 }
 
 #clear {
@@ -58,12 +61,22 @@ button {
     color:white;
 }
 
-.add {
-    display:flex;
-}
-
 .remove {
     display:none;
+}
+
+/*----classlist styles------*/
+
+
+.newDiv {
+    padding: 10px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lineThrough {
+    text-decoration: line-through;
 }
 
 

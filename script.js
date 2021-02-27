@@ -2,11 +2,13 @@
 
 let addButton = document.getElementById('add');
 let clearButton = document.getElementById('clear');
- 
+let input = document.getElementById('activity');
 
 
-addButton.addEventListener('click', function() {
+input.addEventListener('keyup', function(e) {
 
+    //This indicates that the event will happen when the key is the enter key
+    if(e.keyCode == 13) {
     //Getting the input field
     let input = document.getElementById('activity');
     //This is the value of the input field- whatever you type into the field 
@@ -24,14 +26,7 @@ addButton.addEventListener('click', function() {
 
 
     //Adding styles to this div
-    div.style.padding = "10px";
-    div.style.display = "flex";
-    div.style.justifyContent = "space-between";
-    div.style.alignItems = "center";
-    //Adding a class of add to this -- in order to access this later in the clear button event listener
-    div.classList.add('add');
-
-
+    div.classList.add('newDiv');
 
     //Creating a second div to place inside of the original div to use as a wrapper for the icons
     let innerDiv = document.createElement('div');
@@ -51,10 +46,9 @@ addButton.addEventListener('click', function() {
     //When the image element (icon) has been clicked, it will put a line through the the div
     check.addEventListener('click', function() {
 
-        div.style.textDecoration = "line-through";
+        div.classList.toggle('lineThrough');
 
     })
-
 
     //Adding a close icon
     let close = document.createElement('IMG');
@@ -73,10 +67,8 @@ addButton.addEventListener('click', function() {
         div.style.display = 'none';
 
     })
-
-
-
-  
+    
+}
 
 })
 
@@ -86,7 +78,7 @@ addButton.addEventListener('click', function() {
 clearButton.addEventListener('click', function() {
 
     //Getting at the div elements with the class of "add"
-    let addedItems = document.querySelectorAll('.add');
+    let addedItems = document.querySelectorAll('.newDiv');
     //Creating array from this nodelist
     let addedItemsArray = Array.from(addedItems);
 
