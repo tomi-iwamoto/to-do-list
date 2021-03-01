@@ -1,14 +1,13 @@
-//When I type a text in to the input field, the word I typed will show up on the screen when I click the "add item" button
-
 let addButton = document.getElementById('add');
 let clearButton = document.getElementById('clear');
 let input = document.getElementById('activity');
-
+let closeButton = document.getElementById('closeId');
 
 input.addEventListener('keyup', function (e) {
 
     //This indicates that the event will happen when the key is the enter key
     if (e.keyCode == 13) {
+
 
         //Getting the input field
         let input = document.getElementById('activity');
@@ -30,9 +29,11 @@ input.addEventListener('keyup', function (e) {
         div.classList.add('newDiv');
         div.id = "newDivId";
 
+
         //Creating a second div to place inside of the original div to use as a wrapper for the icons
         let innerDiv = document.createElement('div');
         div.appendChild(innerDiv);
+
 
         //Creating icon to put a line through activities that are completed.
         //To do this, create an image element and then set the attributes of the image using setAttribute
@@ -44,10 +45,12 @@ input.addEventListener('keyup', function (e) {
         check.style.margin = "10px";
         check.id = "checkId";
 
+
         //Adding the icon to the inner div
         innerDiv.appendChild(check);
 
-        //When the image element (icon) has been clicked, it will put a line through the the div
+
+        // When the image element (icon) has been clicked, it will put a line through the the div
         check.addEventListener('click', function () {
 
             div.classList.toggle('lineThrough');
@@ -60,9 +63,11 @@ input.addEventListener('keyup', function (e) {
         close.setAttribute('src', 'close.png');
         close.setAttribute('width', '20');
         close.setAttribute('height', '20');
+        close.id = "closeId";
         close.style.margin = "10px";
         //Adding the icon to the added div
         innerDiv.appendChild(close);
+
 
         //When the close button is clicked, it will remove the added div
         close.addEventListener('click', function () {
@@ -72,9 +77,7 @@ input.addEventListener('keyup', function (e) {
         })
 
 
-
     }
-
 })
 
 
@@ -100,17 +103,27 @@ clearButton.addEventListener('click', function () {
 
 
 
-/*Tried to separate event listeners -- I tried to access the dynamically created elements by ids, but it would not work. Therefore I am returning this event listener back to its position inside of the other event listener until I can figure out why!
+/*Tried to separate event listeners -- I tried to access the dynamically created elements by ids, but it would not work. Therefore I am returning this event listener back to its position inside of the other event listener until I can figure out why!*/
+//One for close button (the x mark)
+// closeButton.addEventListener('click', function () {
 
-let checkIcon = document.getElementById('checkId');
-let newDivId = document.getElementById('newDivId');
+//     let newDiv = document.getElementById('newDivId');
 
-//When the image element (icon) has been clicked, it will put a line through the the div
-checkIcon.addEventListener('click', function () {
+//     newDiv.style.display = 'none';
 
-    newDivId.classList.toggle('lineThrough');
+// })
 
-})*/
+
+//One for the check icon
+// let checkIcon = document.getElementById('checkId');
+// let newDivId = document.getElementById('newDivId');
+
+// //When the image element (icon) has been clicked, it will put a line through the the div
+// checkIcon.addEventListener('click', function () {
+
+//     newDivId.classList.toggle('lineThrough');
+
+// })
 
 
 
